@@ -32,4 +32,9 @@ public class Fibonacci extends Progression {
 		return value; 
 	}
 
+public String toString() {
+		
+		return "Fibo";
+		
+	}
 }
