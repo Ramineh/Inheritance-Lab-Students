@@ -9,7 +9,8 @@ public class Arithmetic extends Progression {
 	}
 	
 	@Override
-	public double nextValue() {
+	public double nextValue() throws IllegalStateException{
+		if(firstValuerun==false) throw new  IllegalStateException("Operation firstValue needs to run first");
 		current = current + commonDifference; 
 		return current;
 	}
@@ -19,5 +20,14 @@ public String toString() {
 		return "arith ("+(int)this.firstValue()+","+(int)this.commonDifference+")";
 		
 	}
+
+@Override
+public double getTerm(int n) throws IndexOutOfBoundsException { 
+	if (n <= 0) 
+		throw new IndexOutOfBoundsException("Invalid argument value = " + n); 
+	 
+
+	return this.firstValue() +(this.commonDifference)*(n-1); 
+}
 
 }
