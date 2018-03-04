@@ -1,9 +1,11 @@
 package orderedStructures;
 
 import java.security.InvalidParameterException;
+
+import interfaces.Combinable;
 import interfaces.OrderedNumberStructure; 
 
-public abstract class Progression implements OrderedNumberStructure {
+public abstract class Progression implements OrderedNumberStructure,Combinable {
 	private double first;       // the first value
 	protected double current;   
 	protected boolean firstValuerun=false;
@@ -41,6 +43,15 @@ public abstract class Progression implements OrderedNumberStructure {
 			value = this.nextValue(); 
 		return value; 
 	}
+	//public abstract boolean Equals();//
 	
-	public abstract double nextValue(); 
+	public abstract double nextValue();
+
+	public abstract void add (Progression q, int l);
+	public abstract void subtract (Progression q, int l);
+		
+	
+	
+
+	
 }
